@@ -18,17 +18,26 @@ function HomePage() {
         // >
         <div className='container'>
             <div className='row' style={{ padding: '30px' }}>
-           
-        
-            
-            
-            
-            
-            
-
             
                 <h1 className='display-1' style={{borderColor:'grey', borderWidth:'5px', borderStyle:'double', fontWeight:'300', fontFamily: 'garamond', fontSize:'80px', color:'white', backgroundColor:'black'}}>Glorious Books</h1>
+            </div>
+            <div className='row'>
+                <h2 style={{paddingBottom: '100px'}}>Search for books by...</h2>
+            </div>
+            <div className='row'>
+                <div className='col-5'>
+
                 </div>
+            
+                <div className='col-1'>
+                    <h3 className='start-end'><a href='/author' style={{color:'#a84343'}}>Author</a></h3>
+                  
+                </div>
+                <div className='col-3'>
+                    <img src='https://artsfuse.org/wp-content/uploads/2020/01/flannery_p-600x431-2.jpg' style={{width:'120pxj', height:'150px'}}></img>
+                </div>
+
+            </div>
         </div>
     )
 }

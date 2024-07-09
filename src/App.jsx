@@ -8,6 +8,7 @@ import SearchByAuthor from './SearchByAuthor.jsx'
 import SearchByTitle from './SearchByTitle'
 import SearchBySubject from './SearchBySubject'
 import Signup from './credentials/Signup'
+import Login from './credentials/Login'
 import HomePage from './HomePage.jsx'
 import NavBar from './NavBar.jsx'
 import ContextObject from './ContextObject'
@@ -48,7 +49,7 @@ function App() {
       <Route path='/title' element={<SearchByTitle />} />
       <Route path='/subject' element={<SearchBySubject />} />
       <Route path='/signup' element={<Signup />}  />
-
+      <Route path='/login' element={<Login />}  />
     </Routes>
     </ContextObject.Provider >
   

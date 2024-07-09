@@ -44,6 +44,7 @@ function Signup () {
 
         navigate('/')
         console.log('signupData added to user state', signupData)
+        
     }
 
     return (
