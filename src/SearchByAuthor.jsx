@@ -38,34 +38,82 @@ function SearchByAuthor() {
 
     function renderInfo(author) {
         return author.map((item, index) => (
-            <div className='container' style={{backgroundColor: 'rgb(180, 200, 150, .8)'}} key={index}>
-                <div className='row test-start'>
-                    <div className='col-10'>
-                    <h1 className='text-start' style={{fontSize:'25px', fontFamily:'garamond', fontWeight:'400'}}>{item.volumeInfo.title}</h1>
-                    <h2 className='text-start' style={{fontSize:'22px', color:'#a84343', fontFamily:'calisto'}}>{item.volumeInfo.authors}</h2>
-                    <p className='text-start'>{item.volumeInfo.description}</p>
-                    <hr></hr>
+        <>
+            
+                <div className='card text-start row' style={{backgroundColor: 'rgb(180, 200, 150, .8)'}} key={index}>
+                    
+                    <div className='card-body col-12'>                        
+                            {console.log('item returned', item)}
+                            <h4 className='card-title' style={{fontFamily:'garamond', fontWeight:'400'}}>{item.volumeInfo.title}</h4>
+                            <h5 className='card-subtitle mb-2' style={{color:'#a84343', fontFamily:'calisto'}}>{item.volumeInfo.authors}</h5>
+                            <div className='row'>
+                                <div className='col-9'>
+                                    <p className='card=text'>{item.volumeInfo.description}</p>
+                                </div>
+                                <div className='col-3 text-center'>
+                                    {item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail ? (
+                                            <img src={item.volumeInfo.imageLinks.thumbnail}>
+                                            </img>
+                                        ) : (
+                                            <img className='img-fluid' src='https://images.pexels.com/photos/1463376/pexels-photo-1463376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></img>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                                    
+                            {/*add href to link to */}
+                            
+                        </div>
+                        
+                    <div className='card-footer'>
+                        {/* <div className='row'> */}
+                           <div className='row'>
+                                <div className='col-6'>
+                                    <h5 style={{fontSize: '14px'}}>Purchese from:</h5>
+                                        <div className='row'>
+                                            <div className='col-3'>
+                                                {item.saleInfo.buyLink ? (
+                                                    <a href={item.saleInfo.buyLink}className='card-link btn' style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>Google</a>
+                                        
+                                                ) : (
+                                                    null
+                                                )}
+                                            </div>
+                                            <div className='col-3'>
+                                                <a className='card-link btn'style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>Card Link</a>
+                                            </div>
+
+                                        </div>
+                                </div>
+                                <div className='col-6'>
+                                    <h5 style={{fontSize: '14px'}}>e-books:</h5>
+                                        <div className='row'>
+                                            <div className='col-6'>first</div>
+                                            <div className='col-3'>second</div>
+                                            
+                                        </div>
+                                </div>
+                            </div>
+                                
+                            
+
+
+                        
+                        
+                        
+                    
+
+                        
                     </div>
                 </div>
-            </div>
+            {/* </div>      */}
+        </>
             ));
+        
         }
 
     return (
-        // <div className='container text-start'>
-        //     <div className='row'>
-
-        // {author ? (
-        // <>
-        // <h1 style={{marginLeft:'10px'}}>{author.title}</h1>
-        // <h2 style={{marginLeft: '20px'}}>{author.authors[0]}</h2>
-
-        //     <p style={{marginLeft: '20px'}}>"{author.description}"</p>
-        // </>
-        // ) : (
-        //     <h1></h1>
-    
-        // )}
+        
         // </div>
     <>
     <div className='container text-center'>
@@ -93,3 +141,33 @@ function SearchByAuthor() {
 }
 
 export default SearchByAuthor
+
+{/* <div className='container' style={{backgroundColor: 'rgb(180, 200, 150, .8)'}} key={index}>
+<div className='row test-start'>
+    <div className='col-10'>
+    <h1 className='text-start' style={{fontSize:'25px', fontFamily:'garamond', fontWeight:'400'}}>{item.volumeInfo.title}</h1>
+    <h2 className='text-start' style={{fontSize:'22px', color:'#a84343', fontFamily:'calisto'}}>{item.volumeInfo.authors}</h2>
+    <p className='text-start'>{item.volumeInfo.description}</p>
+    <hr></hr>
+    </div>
+</div>
+</div> */}
+
+  {/* <div className='col-3'>
+                <p>{item.volumeInfo.imageLinks.thumbnail}</p>
+                </div> */}
+
+{/**<div className='container text-start'>
+        //     <div className='row'>
+
+        // {author ? (
+        // <>
+        // <h1 style={{marginLeft:'10px'}}>{author.title}</h1>
+        // <h2 style={{marginLeft: '20px'}}>{author.authors[0]}</h2>
+
+        //     <p style={{marginLeft: '20px'}}>"{author.description}"</p>
+        // </>
+        // ) : (
+        //     <h1></h1>
+    
+        // )} */}

@@ -1,0 +1,14 @@
+.truncate-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 5.6em; /* Adjust based on your line height and font size */
+}
+
+.show-full-description {
+    display: block;
+    overflow: visible;
+    max-height: none; /* Reset max-height to show full text */
+}
