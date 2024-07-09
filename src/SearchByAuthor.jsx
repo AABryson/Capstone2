@@ -40,17 +40,18 @@ function SearchByAuthor() {
         return author.map((item, index) => (
         <>
             
-                <div className='card text-start row' style={{backgroundColor: 'rgb(180, 200, 150, .8)'}} key={index}>
+                <div className='card text-start' style={{backgroundColor: 'rgb(242, 242, 242, 0.5)', marginBottom:'12px'}} key={index}>
                     
                     <div className='card-body col-12'>                        
                             {console.log('item returned', item)}
                             <h4 className='card-title' style={{fontFamily:'garamond', fontWeight:'400'}}>{item.volumeInfo.title}</h4>
                             <h5 className='card-subtitle mb-2' style={{color:'#a84343', fontFamily:'calisto'}}>{item.volumeInfo.authors}</h5>
                             <div className='row'>
-                                <div className='col-9'>
-                                    <p className='card=text'>{item.volumeInfo.description}</p>
+                                {/* <div className='col-1 border-start p-1'></div> */}
+                                <div className='col-9 border-start'>
+                                    <p className='card-text'>{item.volumeInfo.description}</p>
                                 </div>
-                                <div className='col-3 text-center'>
+                                <div className='col-2 text-center'>
                                     {item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail ? (
                                             <img src={item.volumeInfo.imageLinks.thumbnail}>
                                             </img>
@@ -65,7 +66,7 @@ function SearchByAuthor() {
                             
                         </div>
                         
-                    <div className='card-footer'>
+                    <div className='card-footer border-top border-danger'>
                         {/* <div className='row'> */}
                            <div className='row'>
                                 <div className='col-6'>
@@ -80,16 +81,31 @@ function SearchByAuthor() {
                                                 )}
                                             </div>
                                             <div className='col-3'>
-                                                <a className='card-link btn'style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>Card Link</a>
+                                                <a className='card-link btn'style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>Link</a>
                                             </div>
 
                                         </div>
                                 </div>
                                 <div className='col-6'>
+                                    {console.log('epub link', item.accessInfo.epub.acsTokenLink)}
                                     <h5 style={{fontSize: '14px'}}>e-books:</h5>
-                                        <div className='row'>
-                                            <div className='col-6'>first</div>
-                                            <div className='col-3'>second</div>
+                                        <div className='row'>                                         
+                                           <div className='col-3'>
+                                            {item.accessInfo.epub.isAvailable ? (
+                                                <a href={item.accessInfo.epub.acsTokenLink} className='card-link btn' style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>epub</a>
+                                                ) : (
+                                                    null
+                                                )
+                                            }
+                                            </div>
+                                            <div className='col-3'>
+                                                {item.accessInfo.pdf.isAvailable ? (
+                                                     <a href={item.accessInfo.pdf.acsTokenLink} className='card-link btn' style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>PDF</a>
+                                                     ) : (
+                                                         null
+                                                    )
+                                                }
+                                            </div>
                                             
                                         </div>
                                 </div>

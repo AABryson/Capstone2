@@ -14,7 +14,7 @@ function Signup () {
     let baseURL = 'http://localhost:3001'
     //post request to api; includes user info
     async function sendInfo(user) {
-        let response = await axios.post(`${baseURL}/signup`, user)
+        let response = await axios.post(`${baseURL}/users/signup`, user)
             console.log('response from axios request to /signup', response)
         return response.data
     }
