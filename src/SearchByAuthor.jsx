@@ -69,6 +69,9 @@ function SearchByAuthor() {
                     <div className='card-footer border-top border-danger'>
                         {/* <div className='row'> */}
                            <div className='row'>
+                            {/* <div className='col-2'>
+                                <h5>List price:{item.saleInfo.listPrice.amount}</h5>
+                            </div> */}
                                 <div className='col-6'>
                                     <h5 style={{fontSize: '14px'}}>Purchese from:</h5>
                                         <div className='row'>
@@ -92,20 +95,20 @@ function SearchByAuthor() {
                                         <div className='row'>                                         
                                            <div className='col-3'>
                                             {item.accessInfo.epub.isAvailable ? (
-                                                <a href={item.accessInfo.epub.acsTokenLink} className='card-link btn' style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>epub</a>
+                                                <a href={item.volumeInfo.previewLink} className='card-link btn' style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>Preview</a>
                                                 ) : (
                                                     null
                                                 )
                                             }
                                             </div>
-                                            <div className='col-3'>
+                                            {/* <div className='col-3'>
                                                 {item.accessInfo.pdf.isAvailable ? (
                                                      <a href={item.accessInfo.pdf.acsTokenLink} className='card-link btn' style={{backgroundColor:'#1B1B1F', color:'white', fontSize:'10px'}}>PDF</a>
                                                      ) : (
                                                          null
                                                     )
                                                 }
-                                            </div>
+                                            </div> */}
                                             
                                         </div>
                                 </div>
@@ -130,9 +133,9 @@ function SearchByAuthor() {
 
     return (
         
-        // </div>
+        
     <>
-    <div className='container text-center'>
+    <div className='container'>
         <div className='row'>
         {author ? (
             <>
@@ -140,15 +143,24 @@ function SearchByAuthor() {
             <p style={{ marginLeft: '20px' }}>"{author.description}"</p>
             </>
         ) : (
-            <h1>Search by Author</h1>
+            <h1 style={{padding:'30px', fontFamily:'calluna'}}>Search by Author</h1>
+        
         )}
+        <hr></hr>
         </div>
         
         <form onSubmit={handleSubmit}>
-            <div className='container' style={{ paddingTop: '20px' }}>
-                <label htmlFor='author' style={{marginLeft:'10px'}}>Author</label>
-                <input type='text' id='author' value={input} onChange={handleChange} name='author' style={{marginLeft:'15px'}}/>
-                    <button type='submit' style={{marginLeft:'20px'}}>Search</button>
+            <div className='row' style={{ paddingTop: '20px' }}>
+                <div className='col-2'></div>
+                <div className='col-2'>
+                <label htmlFor='author' style={{fontSize:'26px', fontFamily:'bookman'}}>Author</label>
+                </div>
+                <div className='col-4'>
+                <input style={{width:'400px'}} type='text' id='author' value={input} onChange={handleChange} name='author'/>
+                </div>
+                <div className='col-2'>
+                    <button className='btn btn-light' type='submit' style={{ marginBottom:'10px'}}>Search</button>
+                </div>
             </div>
         </form>
     </div>

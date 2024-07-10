@@ -12,6 +12,7 @@ import Login from './credentials/Login'
 import HomePage from './HomePage.jsx'
 import NavBar from './NavBar.jsx'
 import ContextObject from './ContextObject'
+import Bookshelves from './Bookshelves'
 import './App.css'
 
 
@@ -25,16 +26,23 @@ function App() {
   const [user, setUser] = useState('')
   
   let print = console.log('state of title in app.jsx', title)
-
+  const bookshelfProps = {
+    apiKey: 'AIzaSyBZR1XenESLwQpCZDFvClClUHijprCS7D4',
+    authToken: 'ya29.a0AXooCguW1ud5EOCPPYa6tWHrASOhv_MrG_h6kbeWhUawlGcCVdyj2qwoWBD3vipS3xxmFxW7fojNDS32lKYNhLoQvZHTn3KnoDXhYJnmsrfRg8TJp13gx9CMcMl3xkEHlU7Vcmj4hQgjgeujrQqd9QdCkgGFywD7l10jaCgYKAQASARESFQHGX2Mi4R8MApJGzzQvh6ySUnAqeQ0171',
+    bookshelfId: 0
+     // The ID of the bookshelf you want to access
+    }
+    
 
   return (
     <>
-    <div className='imgFluid'style={{
+    <div className='background-container'>
+    <div className='img-fluid'  style={{
         backgroundImage: `url('https://images.unsplash.com/photo-1667312939934-60fc3bfa4ec0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9va3N8ZW58MHx8MHx8fDA%3D')`,
-        height: '100vh',
-        width: '100vw',
         backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
+        backgroundPosition: 'center',
+        backgroundAttachement: 'fixed',
+        backgroundRepeat: 'no-repeat',  
     }}>
     
 
@@ -50,9 +58,11 @@ function App() {
       <Route path='/subject' element={<SearchBySubject />} />
       <Route path='/signup' element={<Signup />}  />
       <Route path='/login' element={<Login />}  />
+      <Route path='/bookshelves' element={<Bookshelves {...bookshelfProps} />}/>
     </Routes>
     </ContextObject.Provider >
   
+  </div>
   </div>
   </>
   
