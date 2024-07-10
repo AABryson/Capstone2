@@ -25,13 +25,11 @@ function App() {
   const [subject, setSubject] = useState('')
   const [user, setUser] = useState('')
   
-  let print = console.log('state of title in app.jsx', title)
-  const bookshelfProps = {
-    apiKey: 'AIzaSyBZR1XenESLwQpCZDFvClClUHijprCS7D4',
-    authToken: 'ya29.a0AXooCguW1ud5EOCPPYa6tWHrASOhv_MrG_h6kbeWhUawlGcCVdyj2qwoWBD3vipS3xxmFxW7fojNDS32lKYNhLoQvZHTn3KnoDXhYJnmsrfRg8TJp13gx9CMcMl3xkEHlU7Vcmj4hQgjgeujrQqd9QdCkgGFywD7l10jaCgYKAQASARESFQHGX2Mi4R8MApJGzzQvh6ySUnAqeQ0171',
-    bookshelfId: 0
+  console.log('state of title in app.jsx', title)
+  
+  
      // The ID of the bookshelf you want to access
-    }
+    
     
 
   return (
@@ -58,7 +56,7 @@ function App() {
       <Route path='/subject' element={<SearchBySubject />} />
       <Route path='/signup' element={<Signup />}  />
       <Route path='/login' element={<Login />}  />
-      <Route path='/bookshelves' element={<Bookshelves {...bookshelfProps} />}/>
+      <Route path='/bookshelves' element={<Bookshelves />}/>
     </Routes>
     </ContextObject.Provider >
   
