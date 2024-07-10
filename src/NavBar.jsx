@@ -18,15 +18,10 @@ function NavBar() {
         //     <NavLink to='/signup' style={linkStyle}>Signup</NavLink>
         // </div>
         // <div className='container-fluid' style={{width:'100vw'}}>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className='container-fluid'>
-
+            <nav className="navbar navbar-dark bg-dark">
                 <div className="d-flex align-items-center">
 
                 <span className="navbar-brand mb-0 h1" style={{marginLeft:'10px'}}>Glorious Books</span>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
                 {/* <vr></vr> */}
                 <ul className="navbar-nav">
                     <li className='nav-text'>
@@ -44,10 +39,7 @@ function NavBar() {
                     </li>
                 </ul>
             </div>
-
-            </div>
             </nav>
-            
         
         
         
